@@ -1,29 +1,65 @@
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/15c43e112b.js" crossorigin="anonymous"></script>
-  </head>
+<!DOCTYPE html>
+<html>
+<head>
+    <title class="abc">Do you love me?</title>
+    <style>
+        body {
+          background-image:url('/elements/bgimg.jpg') ;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            
+        }
 
-  <body>
-    <div class="container">
-      <h2>Login</h2>
-      <div class="form-group">
-        <input type="email">
-        <label for="Email">Email</label>
-        <i class="fa-solid fa-envelope"></i>
-      </div>
-      <div class="form-group">
-        <input type="Password">
-        <label for="password">password</label>
-        <i class="fa-solid fa-lock"></i>
-      </div>
-      <p><input type="checkbox">remember me <a href="#">forgot Password</a></p>
-      
-      <input id="btn" type="button"value="Login">
-      
-      <p>Dony have an account<a href="#">Register now</a></p>
-    </div>
-  </body>
+        h1 {
+            color: #333333;
+        }
 
-  </html
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        video {
+            max-width: 100%;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Do you love me?</h1>
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+
+    <video id="yesVideo" controls>
+        <source src="/elements/love.mp4" type="video/mp4">
+    </video>
+
+    <video id="noVideo" controls>
+        <source src="/elements/majak.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        document.getElementById('yesButton').addEventListener('click', function() {
+            document.getElementById('yesVideo').style.display = 'block';
+            document.getElementById('yesVideo').play();
+        });
+
+        document.getElementById('noButton').addEventListener('click', function() {
+            document.getElementById('noVideo').style.display = 'block';
+            document.getElementById('noVideo').play();
+        });
+    </script>
+</body>
+</html>
