@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title class="abc">Do you love me?</title>
+    <title>Do you love me?</title>
     <style>
         body {
-          background-image:url('/items/bgimg.jpg') ;
+         background-image:url(/bgimg.jpg);
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
-            
         }
-
         h1 {
-            color: #333333;
+            color: #333;
         }
-
         button {
             padding: 10px 20px;
             font-size: 16px;
-            margin: 10px;
-            border-radius: 5px;
+            margin: 0 10px;
+            border: 2px solid #333;
+            background-color: #f8f8f8;
+            color: #333;
             cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
+            transition: background-color 0.3s, color 0.3s;
         }
-
         button:hover {
-            background-color: #45a049;
+            background-color: #333;
+            color: #fff;
         }
-
         video {
-            max-width: 100%;
-            margin-top: 10px;
             display: none;
+            width: 360px;
+            height: 400px;
         }
     </style>
 </head>
@@ -41,24 +37,23 @@
     <h1>Do you love me?</h1>
     <button id="yesButton">Yes</button>
     <button id="noButton">No</button>
-
-    <video id="yesVideo" controls>
-        <source src="/items/love.mp4" type="video/mp4">
+    <video id="yesVideo" autoplay>
+        <source src="/love.mp4" type="video/mp4">
     </video>
-
-    <video id="noVideo" controls>
-        <source src="/items/majak.mp4" type="video/mp4">
+    <video id="noVideo" autoplay>
+        <source src="/majak.mp4" type="video/mp4">
     </video>
 
     <script>
-        document.getElementById('yesButton').addEventListener('click', function() {
-            document.getElementById('yesVideo').style.display = 'block';
-            document.getElementById('yesVideo').play();
+        document.getElementById("yesButton").addEventListener("click", function() {
+            document.getElementById("yesVideo").style.display = "block";
+            document.getElementById("noVideo").style.display = "none";
+            document.getElementById("yesVideo").play();
         });
-
-        document.getElementById('noButton').addEventListener('click', function() {
-            document.getElementById('noVideo').style.display = 'block';
-            document.getElementById('noVideo').play();
+        document.getElementById("noButton").addEventListener("click", function() {
+            document.getElementById("noVideo").style.display = "block";
+            document.getElementById("yesVideo").style.display = "none";
+            document.getElementById("noVideo").play();
         });
     </script>
 </body>
